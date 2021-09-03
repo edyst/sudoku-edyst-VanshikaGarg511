@@ -78,7 +78,7 @@ html {
     align-items: center;
     margin-top: 0;
 }
-.valore {
+.resval {
     display: flex;
     justify-content: center;
     column-gap: 25px;
