@@ -1,126 +1,378 @@
-* {
-  box-sizing: border-box;
-  font-size: 25px;
+/* function to set Easy Board */
+
+function setEasyBoard() {
+  // To remove the classes given during validation and setting up of board
+ 
+  for (let i = 1; i < 82; i++) {
+    document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("disabled");
+    document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("duplicate");
+    document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("highlight");
+  }
+
+  /*For removal of classes and css being given in validation() function*/
+
+  document.getElementById("final").style.display = "none";
+  document.getElementById("sudoku-grid").classList.remove("lightUp");
+
+  let board = [
+    ["5", "2", "0", "8", "3", "1", "0", "6", "4"],
+    ["8", "0", "4", "0", "0", "0", "0", "5", "3"],
+    ["1", "0", "3", "0", "4", "0", "0", "0", "0"],
+    ["6", "5", "0", "0", "0", "8", "0", "0", "0"],
+    ["0", "4", "9", "7", "0", "3", "5", "1", "0"],
+    ["0", "0", "8", "4", "1", "5", "2", "9", "0"],
+    ["0", "0", "0", "1", "0", "7", "6", "0", "0"],
+    ["4", "0", "0", "0", "0", "6", "8", "0", "0"],
+    ["9", "1", "0", "0", "0", "0", "0", "7", "0"],
+  ];
+
+  let j = 1;
+
+  board.forEach((element, index) => {
+    element.forEach((ele, idx) => {
+      if (ele != 0) {
+        document.querySelector(`#cell-${j} input`).value = ele;
+        document
+          .querySelector(`#cell-${j} input`)
+          .classList.add("disabled");
+
+        j++;
+      } else {
+        document.querySelector(`#cell-${j} input`).value = "";
+        j++;
+      }
+    });
+  });
 }
 
-body {
-  font-family: Source Sans Pro, sans-serif;
-  font-size: 25px;
+/* Function to set Medium Board */
+
+function setMediumBoard() {
+  // To remove the classes given during validation and setting up of board
+
+  for (let i = 1; i < 82; i++) {
+    document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("disabled");
+    document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("duplicate");
+      document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("highlight");
+  }
+  /*For removal of classes and css being given in validation() function*/
+
+  document.getElementById("final").style.display = "none";
+  document.getElementById("sudoku-grid").classList.remove("lightUp");
+
+  let board = [
+    ["0", "0", "0", "0", "1", "0", "5", "0", "0"],
+    ["0", "0", "9", "0", "0", "7", "0", "0", "0"],
+    ["5", "3", "0", "0", "0", "0", "0", "0", "2"],
+    ["0", "0", "6", "0", "3", "0", "0", "0", "7"],
+    ["0", "0", "8", "7", "4", "0", "3", "0", "0"],
+    ["0", "5", "3", "0", "0", "6", "0", "8", "0"],
+    ["0", "6", "2", "3", "0", "0", "0", "0", "0"],
+    ["3", "0", "0", "0", "6", "1", "8", "0", "0"],
+    ["0", "8", "0", "4", "0", "9", "7", "6", "0"],
+  ];
+
+  let j = 1;
+  board.forEach((element, index) => {
+    element.forEach((ele, idx) => {
+      if (ele != 0) {
+        document.querySelector(`#cell-${j} input`).value = ele;
+        document
+          .querySelector(`#cell-${j} input`)
+          .classList.add("disabled");
+        j++;
+      } else {
+        document.querySelector(`#cell-${j} input`).value = "";
+        j++;
+      }
+    });
+  });
 }
 
-#sudoku-grid {
-  border-collapse: collapse;
-  margin: auto;
-  border: 1px solid #344861;
-  padding: 0;
+/* Function to set Hard Board */
+
+function setHardBoard() {
+  // To remove the classes given during validation and setting up of board
+
+  for (let i = 1; i < 82; i++) {
+    document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("disabled");
+    document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("duplicate");
+    document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("highlight");
+  }
+
+  /*For removal of classes and css being given in validation() function*/
+
+  document.getElementById("final").style.display = "none";
+  document.getElementById("sudoku-grid").classList.remove("lightUp");
+
+  let board = [
+    ["0", "0", "6", "0", "0", "0", "0", "0", "1"],
+    ["0", "3", "0", "0", "0", "0", "8", "0", "0"],
+    ["0", "0", "0", "5", "0", "8", "4", "0", "0"],
+    ["0", "6", "0", "0", "1", "0", "0", "2", "0"],
+    ["0", "0", "3", "0", "0", "7", "0", "0", "0"],
+    ["0", "9", "1", "0", "0", "0", "3", "0", "0"],
+    ["0", "0", "0", "0", "0", "5", "1", "7", "0"],
+    ["1", "5", "0", "0", "2", "6", "0", "0", "0"],
+    ["0", "0", "0", "0", "9", "0", "6", "5", "0"],
+  ];
+
+  let j = 1;
+  board.forEach((element, index) => {
+    element.forEach((ele, idx) => {
+      if (ele != 0) {
+        document.querySelector(`#cell-${j} input`).value = ele;
+        document
+          .querySelector(`#cell-${j} input`)
+          .classList.add("disabled");
+        j++;
+      } else {
+        document.querySelector(`#cell-${j} input`).value = "";
+        j++;
+      }
+    });
+  });
 }
 
-.cell {
-  height: 60px;
-  width: 60px;
-  padding: 0;
-  border: 1px solid #bec6d4;
+/* rowsValidtion() function*/
+
+function rowValidation(rowNum) {
+  let checkDuplicate = [];
+  let duplicateIndex = [];
+  let start = 9 * rowNum - 8;
+  let end = 9 * rowNum;
+  let sum = 0;
+  let val;
+  for (; start <= end; start++) {
+    val = Number(document.querySelector(`#cell-${start} input`).value);
+    checkDuplicate.push(val);
+    duplicateIndex.push(start);
+    sum = sum + val;
+  }
+
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9 && j != i; j++) {
+      if (
+        checkDuplicate[i] == checkDuplicate[j] &&
+        checkDuplicate[i] != ""
+      ) {
+        document
+          .querySelector(`#cell-${duplicateIndex[i]} input`)
+          .classList.add("duplicate");
+        document
+          .querySelector(`#cell-${duplicateIndex[j]} input`)
+          .classList.add("duplicate");
+      }
+    }
+  }
+
+  return sum;
 }
 
-.btmBorder {
-  border-bottom: 2px solid #344861;
-}
-.topBorder {
-  border-top: 2px solid #344861;
-}
-.RightBorder {
-  border-right: 2px solid #344861;
-}
+//rowsvalidation() Function
 
-.LeftBorder {
-  border-left: 2px solid #344861;
+function rowsValidation() {
+  let check = 0;
+
+  for (let i = 1; i < 10; i++) {
+    if (rowValidation(i) == 45) check++;
+  }
+  if (check == 9) return 1;
+  else return 0;
 }
 
-.cell input {
-  height: 100%;
-  width: 100%;
-  border: none;
-  outline: none;
-  padding: 10px;
-  text-align: center;
-  font-size: 25px;
-  color: black;
+//columnvalidation() Function
+
+function columnValidation(colNum) {
+  let checkDuplicate = [];
+  let duplicateIndex = [];
+  let start = colNum;
+  let end = 7 * 10 + colNum + 2;
+  let sum = 0;
+  let val;
+  for (; start <= end; start += 9) {
+    val = Number(document.querySelector(`#cell-${start} input`).value);
+    checkDuplicate.push(val);
+    duplicateIndex.push(start);
+    sum = sum + val;
+  }
+
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9 && j != i; j++) {
+      if (
+        checkDuplicate[i] == checkDuplicate[j] &&
+        checkDuplicate[i] != ""
+      ) {
+        document
+          .querySelector(`#cell-${duplicateIndex[i]} input`)
+          .classList.add("duplicate");
+        document
+          .querySelector(`#cell-${duplicateIndex[j]} input`)
+          .classList.add("duplicate");
+      }
+    }
+  }
+
+  return sum;
 }
 
-.cell input:hover {
-  background-color: rgb(187,222,251);
-  color: black;
-  cursor: pointer;
+//columnsvalidation() Function
+
+function columnsValidation() {
+  let check = 0;
+
+  for (let i = 1; i < 10; i++) {
+    if (columnValidation(i) == 45) check++;
+  }
+  if (check == 9) return 1;
+  else return 0;
 }
 
-.cell input:focus {
-  background-color: rgb(187,222,251);
-  color: black;
-  caret-color: transparent;
+//boxvalidation() Function
+
+function boxValidation(boxNum) {
+  let sum = 0;
+  let checkDuplicate = [];
+  let duplicateIndex = [];
+
+  for (let i = 1; i < 4; i++) {
+    for (let j = 1; j < 4; j++) {
+      val = Number(document.querySelector(`#cell-${boxNum} input`).value);
+      sum = sum + val;
+      checkDuplicate.push(val);
+      duplicateIndex.push(boxNum);
+      boxNum++;
+    }
+    boxNum += 6;
+  }
+
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9 && j != i; j++) {
+      if (
+        checkDuplicate[i] == checkDuplicate[j] &&
+        checkDuplicate[i] != ""
+      ) {
+        document
+          .querySelector(`#cell-${duplicateIndex[i]} input`)
+          .classList.add("duplicate");
+        document
+          .querySelector(`#cell-${duplicateIndex[j]} input`)
+          .classList.add("duplicate");
+      }
+    }
+  }
+
+  return sum;
+}
+
+//boxesvalidation() Function
+
+function boxesValidation() {
+  let check = 0;
+  let boxNumber = 1;
+
+  for (let i = 1; i < 4; i++) {
+    for (let j = 1; j < 4; j++) {
+      if (boxValidation(boxNumber) == 45) check++;
+      boxNumber += 3;
+    }
+    boxNumber += 18;
+  }
+
+  if (check == 9) return 1;
+  else return 0;
+}
+
+//Validation Function
+
+function validation() {
+  for (let i = 1; i < 82; i++) {
+    document
+      .querySelector(`#cell-${i} input`)
+      .classList.remove("duplicate");
+  }
+
+  var rowResult = rowsValidation();
+  var colResult = columnsValidation();
+  var boxResult = boxesValidation();
+  if (rowResult && colResult && boxResult) {
+    document.getElementById("final").innerText =
+      "Congrats! You have done it.";
+
+    // extra classes and css
+
+    document.getElementById("final").classList.add("final");
+    document.getElementById("sudoku-grid").classList.add("lightUp");
+    document.getElementById("final").style.display = "block";
+  } else {
+    document.getElementById("final").innerText =
+      "Sorry , Validation Failed ! Try again.";
+
+    //extra classes and css
+
+    document.getElementById("final").classList.add("final");
+    document.getElementById("sudoku-grid").classList.add("lightUp");
+    document.getElementById("final").style.display = "block";
+  }
+}
+
+
+function highlightBox(boxNumber){
+
+    
+  for (let i = 1; i < 4; i++) {
+    for (let j = 1; j < 4; j++) {
+      document.querySelector(`#cell-${boxNumber} input`).classList.add("highlight");
+      boxNumber ++;
+    }
+    boxNumber += 6;
+  }
+
 
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+function onFocus(rowNumber,colNumber,boxNumber) {
+  document.getElementById("final").style.display = "none";
+  document.getElementById("sudoku-grid").classList.remove("lightUp");
+  
+  for (let j = 1; j < 82; j++) {
+    document.querySelector(`#cell-${j} input`).classList.remove("highlight");
+    document.querySelector(`#cell-${j} input`)
+          .classList.remove("duplicate");
+  }
 
-.div {
-  display: flex;
-  justify-content: center;
-  margin: 15px;
-  column-gap: 15vw;
-  height: 45px;
-}
+ //Highlighting Row 
 
-.btn {
-  font-size: 22px;
-  width: 100px;
-  border: none;
-  border-radius: 3px;
-}
+  for (let j = 9*rowNumber-8; j<=9*rowNumber; j++) {
+    document.querySelector(`#cell-${j} input`).classList.add("highlight");
+  }
 
-.btn:hover {
-  border: 2px solid rgb(171, 209, 240);
-  cursor: pointer;
-}
+//Highlighting Column
 
+for (let j =colNumber; j<=colNumber+72; j+=9) {
+    document.querySelector(`#cell-${j} input`).classList.add("highlight");
+  }
 
+  //Highlighting Box    
 
-.disabled {
-  background-color: #e8ecda;
-  color: black;
-  pointer-events: none;
-}
+      highlightBox(boxNumber);
 
-.final {
-    display: block;
-  text-align: center;
-  color: #cfc547;
-
-  text-shadow: 10px 10px 25px rgb(81, 67, 21), -10px 10px 25px rgb(81, 67, 21),
-    -10px -10px 25px rgb(81, 67, 21), 10px -10px 25px rgb(81, 67, 21);
-  background-color: black;
-
-  margin: 25px;
-  padding: 10px;
-}
-
-.lightUp{
-    box-shadow: 10px 10px 25px rgb(81, 67, 21), -10px 10px 25px rgb(81, 67, 21),
-    -10px -10px 25px rgb(81, 67, 21), 10px -10px 25px rgb(81, 67, 21);
-}
-
-.duplicate{
-  border-radius: 10px;
-  box-shadow:  inset 0 0 8px #e91e1e;
-}
-
-.highlighter{
-  background-color:rgb(187,222,251) ;
-}
-
-.highlight {
-  background-color: rgb(226,235,243);
 }
